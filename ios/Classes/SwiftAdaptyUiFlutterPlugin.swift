@@ -178,7 +178,7 @@ public class SwiftAdaptyUiFlutterPlugin: NSObject, FlutterPlugin {
         vc.modalPresentationCapturesStatusBarAppearance = true
         vc.modalPresentationStyle = .overFullScreen
 
-        guard let rootVC = UIApplication.shared.windows.first?.rootViewController else {
+        guard let rootVC = UIApplication.shared.windows.last?.rootViewController else {
             let error = AdaptyError(AdaptyUIFlutterError.viewPresentationError(id))
             flutterCall.callAdaptyError(flutterResult, error: error)
             return
